@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOmatoTimerBySa9ar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="header">
+        <h3>TOmatoTimerBySa9ar</h3>
+    </section>
+
+    <section id="middle">
+        <div class="container">
+            <div class="modes">
+                <div id="pomodoro">
+                    <button>
+                        Pomodoro
+                    </button>
+                </div>
+                <div id="shortBreak">
+                    <button>
+                        Short Break
+                    </button>
+                </div>
+                <div id="longBreak">
+                    <button>
+                        Long Break
+                    </button>
+                </div>
+            </div>
+
+            <div class="content">
+                <p id="time">25 : 00</p>
+            </div>
+
+            <div class="buttons">
+                <div class="button start">
+                    <button>
+                        Start 
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+                <div class="button stop">
+                    <button>
+                        Stop
+                        <i class="fa-solid fa-stop"></i>
+                    </button>
+                </div>
+                <div class="button reset">
+                    <button>
+                        Reset
+                        <i class="fa-solid fa-arrow-rotate-left fa-rotate-270"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <audio class="audio" src="audio/finishAudio.mp3"></audio>
+
+    <section id="footer">
+        
+        <div class="copyright">
+            <p>&copy Copyright 2023 @Sagar Khadka <a 
+                href="https://github.com/sa9ar19">
+                <i class="fa-brands fa-github fa-lg" style="color: #000"></i>
+            </a></p>
+        </div>
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

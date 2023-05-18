@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    box-sizing: border-box;
+}
+
+#header {
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h3 {
+    font-size: 60px;
+}
+
+#middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+.modes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: 10px;
+}
+#pomodoro button:hover {
+    background-color: #0b5f43;
+}
+#pomodoro button:active {
+    background-color: #0b5f;
+}
+
+.container {
+    height: 400px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:3px solid #000;
+    border-radius: 10px;
+}
+.content {
+    height: 300px;
+    width: 700px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+#time{
+    font-size: 250px;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 90px;
+    width: 700px;
+}
+button {
+    height: 40px;
+    width: 100px;
+    background-color: #00ffaa;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
