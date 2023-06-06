@@ -16,49 +16,70 @@ var shortBreak = document.getElementById("shortBreak")
 var longBreak = document.getElementById("longBreak")
 
 // Focus Mode
-pomodoro.addEventListener("click",()=>{
+pomodoro.addEventListener("click",function remove(){
     timer.innerHTML="25 : 00"
+
+    pomodoro.style.backgroundColor = "#ff0000"
+
+    shortBreak.style.backgroundColor = "#00ffaa"
+
+    longBreak.style.backgroundColor = "#00ffaa"
 
     let focusTimer
 
+    var myTimer
+
     start.addEventListener("click",()=>{
 
-        TimeNow = new Date().getTime();
+        TimeNow = new Date().getTime()
 
-        var startTime = TimeNow + 1501000;
+        var startTime = TimeNow + 1501000
 
-        var myTimer = setInterval(function(){
+        myTimer = setInterval(function(){
             var currentTime = new Date().getTime()
         
-            var time = startTime-currentTime;
+            var pomodorotime = startTime-currentTime;
         
-            var minute = Math.floor((time % (1000*60*60))/(1000*60));
+            var minute = Math.floor((pomodorotime % (1000*60*60))/(1000*60));
         
-            var second = Math.floor((time % (1000*60))/(1000));
+            var second = Math.floor((pomodorotime % (1000*60))/(1000));
         
             timer.innerHTML = minute + " : " + second ;
 
-            if(time < 1000){
+            if (pomodorotime<1000){
                 audio.play()
-    
+                
                 clearInterval(myTimer)
     
                 timer.innerHTML = "25 : 00"
             }
+
+            })
         },1000);
-        
         reset.addEventListener("click",()=>{
             clearInterval(myTimer)
+    
+            removeEventListener("click", remove())
         
             timer.innerHTML = "25 : 00"
         })
     }) 
-})
+    
 
 // ShortBreak Mode 
 shortBreak.addEventListener("click",()=>{
 
+    // pomodoro.removeEventListener("click", remove())
+
+    pomodoro.style.backgroundColor = "#00ffaa"
+
+    longBreak.style.backgroundColor = "#00ffaa"
+
+    shortBreak.style.backgroundColor = "#ff0000"
+
     timer.innerHTML="5 : 00"
+
+    let shortTimer
 
     start.addEventListener("click",()=>{
 
@@ -66,25 +87,26 @@ shortBreak.addEventListener("click",()=>{
     
         var startTime = TimeNow + 301000;
     
-        var shortTimer = setInterval(function(){
+        shortTimer = setInterval(function(){
             var currentTime = new Date().getTime()
         
-            var time = startTime-currentTime;
+            var shorttime = startTime-currentTime;
         
-            var minute = Math.floor((time % (1000*60*60))/(1000*60));
+            var minute = Math.floor((shorttime % (1000*60*60))/(1000*60));
         
-            var second = Math.floor((time % (1000*60))/(1000));
+            var second = Math.floor((shorttime % (1000*60))/(1000));
         
             timer.innerHTML = minute + " : " + second ;
 
-            if(time < 1000){
+            if(shorttime < 1000){
                 audio.play()
 
                 clearInterval(shortTimer)
-
-                timer.innerHTML = "5 : 00"
         }
         },1000);
+        
+        timer.innerHTML = "5 : 00"
+
 
         reset.addEventListener("click",()=>{
             clearInterval(shortTimer)
@@ -99,6 +121,12 @@ shortBreak.addEventListener("click",()=>{
 longBreak.addEventListener("click",()=>{
     timer.innerHTML="10 : 00"
 
+    longBreak.style.backgroundColor = "#ff0000"
+
+    pomodoro.style.backgroundColor = "#00ffaa"
+
+    shortBreak.style.backgroundColor = "#00ffaa"
+
     var longTimer
 
     start.addEventListener("click",()=>{
@@ -110,14 +138,14 @@ longBreak.addEventListener("click",()=>{
         longTimer = setInterval(function(){
             var currentTime = new Date().getTime()
         
-            var time= startTime-currentTime;
+            var longtime= startTime-currentTime;
         
-            var minute = Math.floor((time % (1000*60*60))/(1000*60));
+            var minute = Math.floor((longtime % (1000*60*60))/(1000*60));
         
-            var second = Math.floor((time % (1000*60))/(1000));
+            var second = Math.floor((longtime % (1000*60))/(1000));
             timer.innerHTML = minute + " : " + second ;
 
-            if(time < 1000){
+            if(longtime < 1000){
                 audio.play()
     
                 clearInterval(longTimer)
